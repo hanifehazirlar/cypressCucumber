@@ -34,10 +34,11 @@ bu kismi kopyalayip cypress.json dosyasina yapistirdik.
 
 Bu bolumu kopyalayip package.json dosyasina , koyup sonuna yapistirdik   
 6) integration klasorunun altinda ilk feature dosyamizi olusturuyoruz
-7) integration klasorunun altinda paylinn.js dosyamizi olusturuyoruz (istedigimiz dosya adini ayaziyoruz)
+7) integration klasorunun altinda paylinn.js 9definitionstep) dosyamizi olusturuyoruz (istedigimiz dosya adini ayaziyoruz)
 8) Ayni adrese gidip Step definitions bolumunun altindaki bu komutu kopyaliyoruz.
 
     import { Given,And,Then,When } from "cypress-cucumber-preprocessor/steps";
 
 paylinn.js dosyasinin en ustune yapistiriyoruz { Given,And,Then,When } bu kisma eklemeler yaptik
-9)    
+9)  
+NOT: feature file dosya ismi ile step definition klasorunun ismi ayni olmak zorunda  
