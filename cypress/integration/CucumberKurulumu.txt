@@ -1,0 +1,43 @@
+******Cypress Kurulumu*****
+1) Proje klasorumuzun olmasini istedigimiz yerde bir klasor olusturduk.Adina CypressCucumber verdik
+2) Bu klasoru tutup VSCode un icine surukleyip birakiyoruz.
+3) Terminal-> new Terminal deyip terminale npm init -y komutunu yazip enter
+4) Kurulum icin npm i cypress@9.7.0 burada @ isaretinden sonra kurmak istedigimiz versiyonun numarasini yaziyoruz
+5) https://docs.cypress.io/guides/references/changelog bu adresten istedigimiz versiyonu seciyoruz.
+6) npx cypress open komutu yazip enter yapiyoruz.Hata alirsak bir kac kez yazip enterlamak gerekebiliyor
+
+******Cypress Cucumber Framework Kurulumu*****
+1)https://www.npmjs.com/package/cypress-cucumber-preprocessor bu adrese gittik
+2)npm install --save-dev cypress-cucumber-preprocessor  Get Started bolumunden bu komutu aldik
+terminale yazip enter
+4) Tekrar yukaridaki adrese gidiyoruz.Cypress Configuration bolumunden 
+
+    const cucumber = require('cypress-cucumber-preprocessor').default
+
+    module.exports = (on, config) => {
+    on('file:preprocessor', cucumber())
+    }
+
+bu kismi kopyalayip aldik ve plugins icindeki index.js dosyasinda en sona yapistirdik.
+5)Tekrar ayni adrese gittik Cypress Configuration bolumunden 
+
+    {
+    "testFiles": "**/*.feature"
+    }
+
+bu kismi kopyalayip cypress.json dosyasina yapistirdik.
+6)Ayni adrese gidip Configuration bolumunden
+
+    "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+    }
+
+Bu bolumu kopyalayip package.json dosyasina , koyup sonuna yapistirdik   
+6) integration klasorunun altinda ilk feature dosyamizi olusturuyoruz
+7) integration klasorunun altinda paylinn.js dosyamizi olusturuyoruz (istedigimiz dosya adini ayaziyoruz)
+8) Ayni adrese gidip Step definitions bolumunun altindaki bu komutu kopyaliyoruz.
+
+    import { Given,And,Then,When } from "cypress-cucumber-preprocessor/steps";
+
+paylinn.js dosyasinin en ustune yapistiriyoruz { Given,And,Then,When } bu kisma eklemeler yaptik
+9)    
